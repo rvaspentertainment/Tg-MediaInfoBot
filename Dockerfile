@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     
     libcurl3-gnutls \
     libmms0 \
-    libzen0v5 \
+    
     libcurl4-gnutls-dev \
     libzen-dev \
     wget \
