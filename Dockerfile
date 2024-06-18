@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 RUN apt-get update && apt-get install -y \
     python3-pip \
     git \
-    libtinyxml2-9 \
+    libtinyxml2 \
     libcurl3-gnutls \
     libmms0 \
     libzen0v5 \
@@ -19,7 +19,8 @@ RUN apt-get update && apt-get install -y \
     sox \
     locales \
     megatools \
-  && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*
+
 
 RUN wget -q -O /tmp/libzen0v5.deb http://th.archive.ubuntu.com/ubuntu/pool/universe/libz/libzen/libzen0v5_0.4.40-1_amd64.deb \
   && dpkg -i /tmp/libzen0v5.deb \
@@ -52,3 +53,5 @@ COPY . .
 RUN chmod +x start
 
 CMD ["bash", "start"]
+
+
